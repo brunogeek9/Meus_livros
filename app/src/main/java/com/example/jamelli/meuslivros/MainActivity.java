@@ -54,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode == RESULT_OK)
                 callSnack("CADASTRO REALIZADO COM SUCESSO!!");
 
-            /*else if(requestCode == RESULT_CANCELED){
-
-            }*/
-
-        }else {
-            if(requestCode == RESULT_CANCELED)
+            else if(resultCode == RESULT_CANCELED){
                 callSnack("VC CANCELOU A OPERAÇÃO!!");
-        }
+            }
+
+        }/*else {
+            if(resultCode == RESULT_CANCELED)
+
+        }*/
     }
 }
