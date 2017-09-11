@@ -63,10 +63,7 @@ public class Main4Activity extends AppCompatActivity {
     public void buscaLivro(String titulo){
         BancoHelper bh = new BancoHelper(this);
         livro = bh.findByTitulo(titulo);
-        Toast.makeText(Main4Activity.this,
-                livro.toString(),
-                Toast.LENGTH_SHORT).show();
-        Log.i("livro",livro.getTitulo());
+        Log.i("livro",livro.toString());
         tv_titulo.setText(livro.getTitulo());
         tv_autor.setText(livro.getAutor());
         tv_ano.setText(String.valueOf(livro.getAno()));
