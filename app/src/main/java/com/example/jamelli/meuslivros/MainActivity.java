@@ -34,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button bnt_busca = (Button) findViewById(R.id.button7);
+        bnt_busca.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Main4Activity.class);
+                startActivity(intent);
+            }
+        });
     }
     public void callSnack(String message){
         Snackbar snack = Snackbar.make(constraint, message, Snackbar.LENGTH_LONG)
@@ -58,9 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 callSnack("VC CANCELOU A OPERAÇÃO!!");
             }
 
-        }/*else {
-            if(resultCode == RESULT_CANCELED)
-
-        }*/
+        }
     }
 }
