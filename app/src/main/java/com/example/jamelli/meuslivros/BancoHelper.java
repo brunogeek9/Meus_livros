@@ -131,7 +131,35 @@ public class BancoHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
+    public Livro findByTitulo(String titulo) {
+        SQLiteDatabase db = getReadableDatabase();
 
+        Log.i(TAG, "Buscou livro de titulo = "+ titulo);
+
+        try {
+            // select * from carro
+            String selection = contratoLivro.livroEntry.TITULO + "= ?";
+            String[] whereArgs = new String[]{String.valueOf(titulo)};
+            Cursor c = db.query(contratoLivro.livroEntry.TABLE_NAME, null, selection, whereArgs, null, null, null, null);
+
+            if (c.moveToFirst()){
+                Livro livro = new Livro();
+
+                // recupera os atributos de carro
+                livro.setId(c.getInt(c.getColumnIndex(contratoLivro.livroEntry._ID)));
+                livro.setAutor(c.getString(c.getColumnIndex(contratoLivro.livroEntry.AUTOR)));
+                livro.setTitulo(c.getString(c.getColumnIndex(contratoLivro.livroEntry.TITULO)));
+                livro.setAno(c.getInt(c.getColumnIndex(contratoLivro.livroEntry.ANO)));
+                livro.setNota(c.getInt(c.getColumnIndex(contratoLivro.livroEntry.NOTA)));
+
+                return livro;
+            }else {
+                return null;
+            }
+        } finally {
+            db.close();
+        }
+    }
 
 
 
