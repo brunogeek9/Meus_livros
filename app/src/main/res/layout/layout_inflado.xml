@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:padding="5dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Titulo do livro escolhido"
+
+            android:id="@+id/titulo"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Autor do livro"
+            android:id="@+id/autor"
+            android:textStyle="italic" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/nota"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="5dp"
+
+        android:text="1"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/ano"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="1"
+        android:textSize="25dp" />
+</LinearLayout>

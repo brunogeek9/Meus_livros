@@ -43,6 +43,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button bnt_lv = (Button) findViewById(R.id.button8);
+        bnt_lv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Main5Activity.class);
+                startActivity(intent);
+            }
+        });
     }
     public void callSnack(String message){
         Snackbar snack = Snackbar.make(constraint, message, Snackbar.LENGTH_LONG)

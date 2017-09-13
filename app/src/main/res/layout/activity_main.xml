@@ -12,12 +12,14 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="46dp"
         android:text="Cadastrar Novo"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintLeft_toLeftOf="@+id/button2"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1" />
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintRight_creator="1"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="64dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
@@ -25,14 +27,16 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:text="Listar Livros"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintBottom_creator="1"
-        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintTop_creator="1"
         tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toTopOf="@+id/button7"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="29dp"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <Button
         android:id="@+id/button7"
@@ -41,10 +45,24 @@
         android:layout_height="wrap_content"
         android:text="PESQUISAR LIVRO"
         tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintRight_toRightOf="@+id/button2"
+        android:layout_marginTop="96dp"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:layout_marginRight="4dp" />
+
+    <Button
+        android:id="@+id/button8"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ListView Livro"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/button7"
         tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/button2"
-        android:layout_marginLeft="4dp" />
+        app:layout_constraintLeft_toLeftOf="@+id/button7"
+        android:layout_marginLeft="6dp" />
 </android.support.constraint.ConstraintLayout>
