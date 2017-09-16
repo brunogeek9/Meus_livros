@@ -89,9 +89,19 @@ public class BancoHelper extends SQLiteOpenHelper {
             values.put(contratoLivro.livroEntry.ANO,livro.getAno());
             values.put(contratoLivro.livroEntry.NOTA,livro.getNota());
 
-            id = db.insert(contratoLivro.livroEntry.TABLE_NAME, null, values);
-            Log.i(TAG, "Inseriu id [" + id + "] no banco.");
-            return id;
+            if (id != 0) {
+                String selection = contratoLivro.livroEntry._ID + "= ?";
+                String[] whereArgs = new String[]{String.valueOf(id)};
+
+                int count = db.update(contratoLivro.livroEntry.TABLE_NAME, values, selection, whereArgs);
+                Log.i(TAG, "Atualizou id [" + id + "] no banco.");
+                return count;
+
+            } else {
+                id = db.insert(contratoLivro.livroEntry.TABLE_NAME, null, values);
+                Log.i(TAG, "Inseriu id [" + id + "] no banco.");
+                return id;
+            }
 
         }finally {
             db.close();
@@ -106,8 +116,6 @@ public class BancoHelper extends SQLiteOpenHelper {
             do {
                 Livro livro = new Livro();
                 livros.add(livro);
-
-                // recupera os atributos de carro
                 livro.setId(c.getInt(c.getColumnIndex(contratoLivro.livroEntry._ID)));
                 livro.setAutor(c.getString(c.getColumnIndex(contratoLivro.livroEntry.AUTOR)));
                 livro.setTitulo(c.getString(c.getColumnIndex(contratoLivro.livroEntry.TITULO)));
@@ -123,7 +131,6 @@ public class BancoHelper extends SQLiteOpenHelper {
     public List<Livro> findAll() {
         SQLiteDatabase db = getReadableDatabase();
         try {
-            // select * from carro
             Cursor c = db.query(contratoLivro.livroEntry.TABLE_NAME, null, null, null, null, null, null, null);
             Log.i(TAG, "Listou todos os registros");
             return toList(c);
@@ -137,7 +144,6 @@ public class BancoHelper extends SQLiteOpenHelper {
         Log.i(TAG, "Buscou livro de titulo = "+ titulo);
 
         try {
-            // select * from carro
             String selection = contratoLivro.livroEntry.TITULO + "= ?";
             String[] whereArgs = new String[]{String.valueOf(titulo)};
             Cursor c = db.query(contratoLivro.livroEntry.TABLE_NAME, null, selection, whereArgs, null, null, null, null);
@@ -145,7 +151,6 @@ public class BancoHelper extends SQLiteOpenHelper {
             if (c.moveToFirst()){
                 Livro livro = new Livro();
 
-                // recupera os atributos de carro
                 livro.setId(c.getInt(c.getColumnIndex(contratoLivro.livroEntry._ID)));
                 livro.setAutor(c.getString(c.getColumnIndex(contratoLivro.livroEntry.AUTOR)));
                 livro.setTitulo(c.getString(c.getColumnIndex(contratoLivro.livroEntry.TITULO)));

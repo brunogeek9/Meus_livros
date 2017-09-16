@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Titulo do livro escolhido"
-
+            android:layout_weight="4"
             android:id="@+id/titulo"
             android:textStyle="bold" />
         <TextView
@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Autor do livro"
             android:id="@+id/autor"
+            android:layout_weight="4"
             android:textStyle="italic" />
     </LinearLayout>
 
@@ -31,7 +32,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="2"
+        android:layout_weight="1.5"
         android:gravity="center"
         android:padding="5dp"
 
@@ -43,7 +44,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="2"
+        android:layout_weight="2.5"
         android:gravity="center"
         android:padding="5dp"
         android:text="1"
